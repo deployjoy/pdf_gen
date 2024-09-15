@@ -1,4 +1,5 @@
 /* 1.0 CSS to make A4 print preview as default web view */
+/* When viewing the pdf on a screen, it will show a paginated view. */
 @media screen {
     .pagedjs_pages {
         display: flex;
@@ -14,6 +15,24 @@
         border: solid 1px gray;
     }
 }
+
+/* Can use these to change the properties for when the document is actually printed. */
+/* @media print {
+    body {
+        width: 210mm;
+        height: 297mm;
+    }
+    .a4-page {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+    }
+} */
 
 /* 1.5 Some Custom Font Families */
 @font-face {
@@ -47,16 +66,31 @@
     font-weight: bold;
 }
 
+@font-face {
+    font-family: 'Futura';
+    src: url('fonts/futura.ttf') format('truetype');
+    font-weight: normal;
+}
+
 /* 2.0 General Formatting */
-html { font-family: 'Roboto', sans-serif; }
+html { font-family: 'Futura', Arial, sans-serif; }
+
 h1 { border-bottom: 1px solid black; margin-bottom: 2rem; padding-bottom: 1rem; }
+
 h2 { border-bottom: 0.1875rem solid black; margin-bottom: 1rem; padding-bottom: 0.5rem; }
+
 p { text-align: justify; line-height: 1.4rem; }
+
 a { color: #347dbd; }
+
 a:hover { color: #FC814A; }
+
 mark { color: purple; background-color: inherit; }
+
 light-mark { color: purple; }
+
 img { max-width: calc(100% - 3rem); }
+
 .img-75mm { height: 75mm; }
 
 center { border: 0.5px solid gray; padding: 1.5rem; }
@@ -68,13 +102,16 @@ pre {
     font-size: smaller;
     white-space: pre-wrap;
 }
+
 code { margin-bottom: 1.5rem; display: block; }
+
 figure {
     margin-block-start: 2rem;
     margin-block-end: 2rem;
     margin-inline-start: 0rem;
     margin-inline-end: 0rem;
 }
+
 figcaption {
     caption-side: top;
     padding-bottom: 0.75rem;
@@ -102,6 +139,30 @@ h2.top { margin-block-start: 0rem; margin-block-end: 1.66rem; }
 h3:not(.top) { margin-block-start: 2.49rem; margin-block-end: 0.83rem; }
 h3.top { margin-block-start: 1.66rem; margin-block-end: 0.83rem; }
 
+/* 3.3 Page Numbers */
+@page { @bottom-right { content: counter(page); } }
+
+/* We use the counter-reset class to prevent the page
+numbers starting from the cover page, but rather
+from the next page (table of contents) */
+.counter-reset { counter-reset: page 1; }
+
+
+
+/* 4.3 Cover Pages */
+.cover-page { page: cover-page; }
+.cover-page h1 { border-bottom: 0.25rem solid white; }
+.cover-page h3 { font-weight: normal; }
+@page cover-page {
+   background-image: url('DeployJoy_proposal_cover.svg');
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: cover;
+   color: white;
+   @top-right { content: none; }
+   @bottom-left { content: none; }
+   @bottom-right { content: none; }
+}
 
 /* body {
     margin: 0;
