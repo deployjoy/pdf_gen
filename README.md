@@ -18,5 +18,8 @@ You need to publish the HTML file to the web and then use the URL to generate th
 - Build this into a web app.
 
 
-### INPUTS
-- Sections of the Document
+### INPUTS TO BE HARD CODED.
+- Json Content File, AI can create this actually. But I need to provide a template to the AI. The content within the JSON needs to be in MD syntax.
+- Formatting, text, colours, etc. All these are hardcoded in style.css. Later on when this becomes a web-app, these can be dynamic or selected in a UI.
+- html template will change depending on the functionality required of the PDF. TOC, Automatic Numbers, Cover Page, Banners etc.
+- 
