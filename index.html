@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> <!-- Not in original -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Not in original -->
     <title>A4 Page with Local SVG Background</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="toc.js"></script>
+    <script src="paged.polyfill.js"></script>
+    <script>
+      class handlers extends Paged.Handler {
+          constructor(chunker, polisher, caller) {
+          super(chunker, polisher, caller);
+          }
+          beforeParsed(content){
+            createToc({
+              content: content,
+              tocElement: '#toc',
+              titleElements: [ 'h2:not(.cover-header)', 'h3:not(.cover-header)' ]
+            });
+        }
+        }
+        Paged.registerHandlers(handlers);
+    </script>
 </head>
+
 <body>
     <div class="a4-page">
         <div class="content">
-            <h1>A4-sized page with SVG background</h1>
-            <p>This page is set to A4 dimensions and uses a local SVG file as the background.</p>
-            <h1>A4-sized page with SVG background</h1>
-            <p>This page is set to A4 dimensions and uses a local SVG file as the background.</p>
-            <h1>A4-sized page with SVG background</h1>
-            <p>This page is set to A4 dimensions and uses a local SVG file as the background.</p>
-            <h1>A4-sized page with SVG background</h1>
-            <p>This page is set to A4 dimensions and uses a local SVG file as the background.</p>
-            <h1>A4-sized page with SVG background</h1>
-            <p>This page is set to A4 dimensions and uses a local SVG file as the background.</p>
-            <h1>A4-sized page with SVG background</h1>
-            <p>This page is set to A4 dimensions and uses a local SVG file as the background.</p>
-            <h1>A4-sized page with SVG background</h1>
-            <p>This page is set to A4 dimensions and uses a local SVG file as the background.</p>
             <h1>A4-sized page with SVG background</h1>
             <p>This page is set to A4 dimensions and uses a local SVG file as the background.</p>
             <h1>A4-sized page with SVG background</h1>
