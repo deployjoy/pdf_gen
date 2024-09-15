@@ -12,7 +12,7 @@ body {
     width: 210mm;
     height: 297mm;
     margin: 0 auto;
-    background-image: url('https://144846107.fs1.hubspotusercontent-eu1.net/hubfs/144846107/Deployjoy_proposal_footer.svg');
+    background-image: url('/home/zanad/documents/pdf_gen/DeployJoy_proposal_footer.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -26,7 +26,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
+    color: green;
     font-family: Arial, sans-serif;
 }
 
