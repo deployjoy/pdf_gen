@@ -144,7 +144,10 @@ h3 { string-set: subsection content(text); }
 .cover-page h1 { border-bottom: 0.25rem solid white; }
 .cover-page h3 { font-weight: normal; }
 @page cover-page {
-    background-color: #347dbd;
+    background-image: url('/home/zanad/documents/pdf_gen/DeployJoy_proposal_header.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     color: white;
     @top-right { content: none; }
     @bottom-left { content: none; }

@@ -13,7 +13,7 @@ async def print_webpage_to_pdf(url, output_file):
         await page.goto(url, {'waitUntil': 'networkidle0'})
         
         # Generate PDF
-        await page.pdf({'path': output_file, 'format': 'A4'})
+        await page.pdf({'path': output_file, 'format': 'A4', 'printBackground': True})
         
         print(f"PDF saved as {output_file}")
     
