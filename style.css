@@ -147,8 +147,6 @@ numbers starting from the cover page, but rather
 from the next page (table of contents) */
 .counter-reset { counter-reset: page 1; }
 
-
-
 /* 4.3 Cover Pages */
 .cover-page { page: cover-page; }
 .cover-page h1 { border-bottom: 0.25rem solid white; }
@@ -163,35 +161,3 @@ from the next page (table of contents) */
    @bottom-left { content: none; }
    @bottom-right { content: none; }
 }
-
-/* body {
-    margin: 0;
-    padding: 0;
-}
-
-.content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: green;
-    font-family: Arial, sans-serif;
-} */
-
-/* @media print {
-    body {
-        width: 210mm;
-        height: 297mm;
-    }
-    .a4-page {
-        margin: 0;
-        border: initial;
-        border-radius: initial;
-        width: initial;
-        min-height: initial;
-        box-shadow: initial;
-        background: initial;
-        page-break-after: always;
-    }
-} */

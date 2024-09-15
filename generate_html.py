@@ -4,7 +4,6 @@ import markdown
 from markdown.extensions import Extension
 from markdown.blockprocessors import ParagraphProcessor
 
-
 # Load content from a JSON file
 def load_content(filename):
     with open(filename, 'r') as file:
@@ -29,11 +28,6 @@ def convert_markdown(content):
         return [convert_markdown(item) for item in content]
     else:
         return content
-    
-# # Read and convert markdown content
-# with open(markdown_file, 'r', encoding='utf-8') as md_file:
-#     md_content = md_file.read()
-# html_content = markdown.markdown(md_content, extensions=['extra'])
 
 # Generate HTML using a template and content
 def generate_html(template_file, content):

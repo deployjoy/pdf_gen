@@ -13,7 +13,7 @@ You can then fill in the data in the html file `index.html` this is the content 
 You need to publish the HTML file to the web and then use the URL to generate the PDF, using the print_2.py script. 
 
 ### Next Steps
-- Figure out a way to dynamically generate the HTML, maybe using a config file.
+- Write a python script to generate the json file by querying a LLM.
 - Build this into a more hands off workflow.
 - Build this into a web app.
 
@@ -23,3 +23,11 @@ You need to publish the HTML file to the web and then use the URL to generate th
 - Formatting, text, colours, etc. All these are hardcoded in style.css. Later on when this becomes a web-app, these can be dynamic or selected in a UI.
 - html template will change depending on the functionality required of the PDF. TOC, Automatic Numbers, Cover Page, Banners etc.
 - 
+
+### Deployment
+- Unless I clone the repo, I can only generate one pdf at a time. Becuase it is hosted on github pages.
+- I should be able to just change the json file, then run a bash script that runs generate html, push to github, then run printing script to generate the pdf. I should make the printing script save the file in a google drive folder rather than locally.
+
+
+# NEXT THING IS TO FOCUS ON GETTING GOOD CONTENT INTO THE JSON FILE.
+- This means good prompts, good scraping, good inputs and parameters into the LLM. to generate valuable, professional content.
