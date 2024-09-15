@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local SVG Background Example</title>
+    <title>A4 Page with Local SVG Background</title>
     <style>
-        body, html {
-            height: 100%;
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        body {
             margin: 0;
             padding: 0;
         }
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+        .a4-page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
             background-image: url('https://144846107.fs1.hubspotusercontent-eu1.net/hubfs/144846107/Deployjoy_proposal_footer.svg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
         }
         .content {
             position: absolute;
@@ -28,16 +30,32 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: green;
+            color: white;
             font-family: Arial, sans-serif;
+        }
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+            .a4-page {
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="background">
+    <div class="a4-page">
         <div class="content">
-            <h1>Welcome to my page with a local SVG background!</h1>
-            <p>This page uses an SVG file from the working directory as the background.</p>
+            <h1>A4-sized page with SVG background</h1>
+            <p>This page is set to A4 dimensions and uses a local SVG file as the background.</p>
         </div>
     </div>
 </body>
