@@ -158,7 +158,7 @@ from the next page (table of contents) */
    background-repeat: no-repeat;
    background-position: center center;
    background-size: cover;
-   color: white;
+   color: blue;
    @top-right { content: none; }
    @bottom-left { content: none; }
    @bottom-right { content: none; }

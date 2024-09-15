@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{content.title}}</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="paged.polyfill.js"></script>
+</head>
+
+<body>
+
+<!-- 1.0 Cover Page -->
+<div class="cover-page">
+	<h1>{{ content.title }}</h1>
+	<h3 class="cover-header no-counter">An Example Repo by {{ content.author }}</h3>
+	<h3 class="cover-header no-counter">{{ content.date }}</h3>
+</div>
+
+<!-- 3.0 Start of Main Content -->
+<!-- 3.1 Section 1 - Foreword -->
+{% for section in content.sections %}
+<h2 class="no-break top"> {{ section.title }}</h2>
+<p>{{ section.content }}</p>
+{% endfor %}
+
+<!-- <h2 class="no-break top">Foreword</h2> -->
+
+<div class="page-break"></div>
+
+</body>
+</html>
