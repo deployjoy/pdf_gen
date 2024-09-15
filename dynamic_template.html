@@ -21,10 +21,8 @@
 <!-- 3.1 Section 1 - Foreword -->
 {% for section in content.sections %}
 <h2 class="no-break top"> {{ section.title }}</h2>
-<p>{{ section.content }}</p>
+<p>{{ section.content|safe }}</p>
 {% endfor %}
-
-<!-- <h2 class="no-break top">Foreword</h2> -->
 
 <div class="page-break"></div>
 

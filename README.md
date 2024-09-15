@@ -18,3 +18,5 @@ You need to publish the HTML file to the web and then use the URL to generate th
 - Build this into a web app.
 
 
+### INPUTS
+- Sections of the Document
